@@ -1,0 +1,39 @@
+﻿@page "/"
+@using DevExpress.AIIntegration.Blazor.Chat
+@using Microsoft.Extensions.AI
+@using ModelContextProtocol
+@using ModelContextProtocol.Client
+
+@inject NavigationManager NavigationManager
+
+<div class="main-container">
+    <DxAIChat CssClass="my-chat"
+              FileUploadEnabled="true"
+              Resources="Resources">
+        <AIChatSettings>
+            <DxAIChatFileUploadSettings MaxFileSize="10000000" MaxFileCount="3"/>
+        </AIChatSettings>
+    </DxAIChat>
+</div>
+
+@code{
+    IEnumerable<AIChatResource> Resources { get; set; } = [];
+    IMcpClient McpClient { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
+        await LoadMcpResources();
+    }
+
+    async Task LoadMcpResources() {
+        var transport = new SseClientTransport(new() { Endpoint = new(NavigationManager.BaseUri + "mcp") });
+        McpClient = await McpClientFactory.CreateAsync(transport);
+        var mcpResources = await McpClient.ListResourcesAsync();
+        Resources = mcpResources.Select(x => new AIChatResource(x.Uri, x.Name, LoadResourceData, x.MimeType, x.Description));
+    }
+
+    async Task<IList<AIContent>> LoadResourceData(AIChatResource resource, CancellationToken ct) {
+        var readResource = await McpClient.ReadResourceAsync(resource.Uri, ct);
+        return readResource.Contents.ToAIContents();
+    }
+}
