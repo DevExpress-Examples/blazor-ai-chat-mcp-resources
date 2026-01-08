@@ -13,7 +13,7 @@
               IncludeFunctionCallInfo="true">
         <PromptSuggestions>
             @foreach (var suggestion in PromptSuggestions){
-                <DxAIChatPromptSuggestion PromptMessage="@suggestion.PromptMessage" Title="@suggestion.Title"/>
+                <DxAIChatPromptSuggestion PromptMessage="@suggestion.PromptMessage" Title="@suggestion.Title" Text="@suggestion.PromptMessage"/>
             }
         </PromptSuggestions>
         <AIChatSettings>
