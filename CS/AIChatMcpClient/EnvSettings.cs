@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AIChatMcpResources;
+namespace AIChatMcpClient;
 
 public static class EnvSettings {
     public static string AzureOpenAIEndpoint => Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
