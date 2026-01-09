@@ -11,7 +11,6 @@ builder.Services.AddRazorComponents()
        .AddInteractiveServerComponents();
 
 builder.Services.AddDevExpressBlazor();
-builder.Services.AddMvc();
 
 builder.Services.AddSingleton<McpRepository>();
 builder.Services.AddHostedService<McpRepositoryInitHostedService>();
