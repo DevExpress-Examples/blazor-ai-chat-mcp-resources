@@ -1,14 +1,11 @@
-﻿@using Microsoft.AspNetCore.Mvc.ViewFeatures
-@inject IFileVersionProvider FileVersionProvider
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <base href="/"/>
-    <link href=@AppendVersion("css/site.css") rel="stylesheet"/>
-    <link href=@AppendVersion("AIChatMcpResources.styles.css") rel="stylesheet"/>
+    <link href="css/site.css" rel="stylesheet"/>
+    <link href="AIChatMcpClient.styles.css" rel="stylesheet"/>
     @DxResourceManager.RegisterScripts()
     @DxResourceManager.RegisterTheme(Themes.Fluent)
     <HeadOutlet/>
@@ -19,7 +16,3 @@
 </body>
 
 </html>
-
-@code{
-    private string AppendVersion(string path) => FileVersionProvider.AddFileVersionToPath("/", path);
-}
