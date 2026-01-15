@@ -17,7 +17,7 @@ public class Tools {
         throw new InvalidOperationException("This function is designed to fail for demo purposes.");
     }
     
-    [McpServerTool(Name = "celsius_to_fahrenheit"), Description("Convers celsius degrees to fahrenheit")]
+    [McpServerTool(Name = "celsius_to_fahrenheit"), Description("Converts celsius degrees to fahrenheit")]
     public static string CToF([Description("The celsius degrees value")] int value) {
         var valueInFahrenheits = value * 9 / 5 + 32;
         return $"{valueInFahrenheits}\u00b0F ({value}\u00b0C)";

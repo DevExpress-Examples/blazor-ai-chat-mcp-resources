@@ -9,6 +9,8 @@
 <div class="main-container">
     <DxAIChat CssClass="my-chat"
               FileUploadEnabled="true"
+              ShowHeader="true"
+              HeaderText=""
               Resources="Resources"
               IncludeFunctionCallInfo="true">
         <PromptSuggestions>
@@ -28,7 +30,7 @@
 
     protected override async Task OnInitializedAsync() {
         Resources = McpRepository.Resources.Select(x => new AIChatResource(x.Uri, x.Name, LoadResourceData, x.MimeType, x.Description));
-        PromptSuggestions = await Task.WhenAll(McpRepository.Prompts.Select(async x => await PromptSuggestion.CreateFromMcpAsync(x)));
+        PromptSuggestions = McpRepository.PromptSuggestions;
         await base.OnInitializedAsync();
     }
 
