@@ -12,9 +12,9 @@ public class Resources {
     [McpServerResource(Name = "Access log", MimeType = "text/plain")]
     public static string LogResource() => ReadTextResource("access.txt");
 
-    [McpServerResource(Name = "AIChat documentation", MimeType = "text/markdown")]
+    [McpServerResource(Name = "AI Chat component documentation", MimeType = "text/markdown")]
     public static string DocsResource() => ReadTextResource("dxaichat.md");
 
     [McpServerResource(Name = "Dashboard screenshot", MimeType = "image/jpeg")]
-    public static BlobResourceContents DashboardResource() => new() { Blob = ReadBlobResource("dashboard.jpg"), Uri = "test://dashboard.jpg" };
+    public static BlobResourceContents DashboardResource() => new() { Blob = ReadBlobResource("dashboard.jpg"), Uri = "dashboard.jpg" };
 }
