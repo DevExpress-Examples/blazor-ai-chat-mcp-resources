@@ -89,7 +89,7 @@ The MCP server exposes reusable [prompt templates](CS/AIChatMcpServer/Entities/P
 
 ### Chat Client
 
-The the [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) connects to Azure OpenAI and [loads](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat.Resources) available tools, resources, and prompts from the MCP server at http://localhost:5002/mcp.
+The [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) connects to Azure OpenAI and [loads](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat.Resources) available tools, resources, and prompts from the MCP server at http://localhost:5002/mcp.
 
 ```Razor
 <div class="main-container">
