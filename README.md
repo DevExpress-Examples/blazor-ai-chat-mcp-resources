@@ -22,7 +22,7 @@ You can quickly add new capabilities to the AI through the MCP server without a 
 
 The solution consists of two projects:
 
-- [AIChatMcpServer](CS/AIChatMcpServer): An MCP server that provides tools, resources, and prompts to the client Blazor application.
+- [AIChatMcpServer](CS/AIChatMcpServer): An MCP server that supplies tools, resources, and prompts to the client Blazor application.
 - [AIChatMcpClient](CS/AIChatMcpClient): A Blazor Server application that hosts the DevExpress AI Chat component and consumes MCP server capabilities.
 
 ## Setup and Configuration
