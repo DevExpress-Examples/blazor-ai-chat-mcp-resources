@@ -77,7 +77,7 @@ The server exposes three [tools](CS/AIChatMcpServer/Entities/Tools.cs) that AI C
 
 #### Resources
 
-The server provides access to the following [static resources](CS/AIChatMcpServer/Entities/Resources.cs) that a user can reference during a chat session.
+The server provides access to the following [static resources](CS/AIChatMcpServer/Entities/Resources.cs) that a user can reference during a chat session:
 
 - [Access log](CS/AIChatMcpServer/Data/access.txt): Nginx-style HTTP server logs with errors and requests.
 - [AI Chat API Reference](CS/AIChatMcpServer/Data/dxaichat.md): DevExpress Blazor AI Chat component documentation.
