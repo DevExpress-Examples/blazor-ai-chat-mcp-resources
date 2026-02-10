@@ -126,7 +126,7 @@ When you interact with the chat:
 
 - Messages go to Azure OpenAI.
 - The model automatically identifies and invokes relevant MCP tools.
-- Results are displayed in the AI Chat component.
+- The AI Chat component displays the result.
 
 A connection between MCP client and an MCP server endpoint is managed in [McpRepository.cs](CS/AIChatMcpClient/Services/McpRepository.cs). The application initializes `McpClient` instance on startup, which loads available tools, resources, and prompts from the MCP server. The class implements `IHostedService` for lifecycle management and `IAsyncDisposable` for proper cleanup of the connection.
 
