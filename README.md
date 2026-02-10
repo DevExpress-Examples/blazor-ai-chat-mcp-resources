@@ -128,7 +128,7 @@ When you interact with the chat:
 - The model automatically identifies and invokes relevant MCP tools.
 - The AI Chat component displays the result.
 
-A connection between MCP client and an MCP server endpoint is managed in [McpRepository.cs](CS/AIChatMcpClient/Services/McpRepository.cs). The application initializes `McpClient` instance on startup, which loads available tools, resources, and prompts from the MCP server. The class implements `IHostedService` for lifecycle management and `IAsyncDisposable` for proper cleanup of the connection.
+A connection between the MCP client and an MCP server endpoint is managed in [McpRepository.cs](CS/AIChatMcpClient/Services/McpRepository.cs). The application initializes an `McpClient` instance on startup to load available tools, resources, and prompts from the MCP server. The class implements `IHostedService` to manage lifecycle and `IAsyncDisposable` for proper cleanup of the connection.
 
 ## Files to Review
 
