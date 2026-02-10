@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "AI Chat with MCP",
+    "Projects": [
+      {
+        "Path": "AIChatMcpServer\\AIChatMcpServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AIChatMcpClient\\AIChatMcpClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
