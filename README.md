@@ -29,7 +29,7 @@ The solution consists of two projects:
 
 To run this example, configure the project dependencies and set up secure authentication for an AI service.
 
-### AI Packages
+### Prerequisites: AI Packages
 
 We use the following versions of Microsoft AI packages in the project:
 
