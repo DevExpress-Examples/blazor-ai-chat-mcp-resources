@@ -5,14 +5,14 @@
 <!-- default badges end -->
 # DevExpress Blazor AI Chat - Integration with Model Context Protocol
 
-This solution demonstrates how the [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) component integrates with the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro). AI models use MCP to securely interact with external data sources, tools, and files. This approach improves context awareness and response accuracy of the model. For example:
+This example demonstrates how the [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) component leverages the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) to enrich AI model context with external data. MCP provides a standardized way for the chat to securely retrieve data from local files, databases, and third-party services, leading to greater precision and reduced hallucinations. For example, the model can:
 
-- **Data analysis**: Connect to enterprise databases and other in-house data sources.
-- **Local file management**: Grant the AI model restricted access to a local directory or codebase.
-- **Documentation & knowledge base**: Allow your AI assistant to access technical manuals, API references, or internal wiki.
-- **Workflow Automation**: Integrate AI Chat with productivity tools like Slack, GitHub, or Jira.
-- **Web research**: Retrieve real-time data from the web using Puppeteer or search APIs.
-- **Business tools**: Connect AI chat to internal CRMs, ERPs, or other business applications.
+- Connect to enterprise databases and other in-house data sources.
+- Grant the AI model restricted access to a local directory or codebase.
+- Allow your AI assistant to access technical manuals, API references, or internal wiki.
+- Integrate AI Chat with productivity tools like Slack, GitHub, or Jira.
+- Retrieve real-time data from the web using Puppeteer or search APIs.
+- Connect AI chat to internal CRMs, ERPs, or other business applications.
 
 You can quickly add new capabilities to the AI through the MCP server without a need to modify the client code.
 
@@ -23,19 +23,21 @@ You can quickly add new capabilities to the AI through the MCP server without a 
 The solution consists of two projects:
 
 - [AIChatMcpServer](CS/AIChatMcpServer): An MCP server that supplies tools, resources, and prompts to the client Blazor application.
-- [AIChatMcpClient](CS/AIChatMcpClient): A Blazor Server application that hosts the DevExpress AI Chat component and consumes MCP server capabilities.
+- [AIChatMcpClient](CS/AIChatMcpClient): A Blazor Server application that hosts the DevExpress AI Chat component integrated with MCP server capabilities.
 
 ## Setup and Configuration
 
-To run this example, configure the project dependencies and set up secure authentication for an AI service.
+To run this example, configure project dependencies and set up secure authentication for an AI service.
 
 ### Prerequisites: AI Packages
 
 We use the following versions of Microsoft AI packages in the project:
 
-- [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI) | **9.7.1**
-- [Microsoft.Extensions.AI.OpenAI](https://www.nuget.org/packages/Microsoft.Extensions.AI.OpenAI/) | **9.7.1-preview.1.25365.4**
-- [Azure.AI.OpenAI](https://www.nuget.org/packages/Azure.AI.OpenAI) | **2.2.0-beta.5**
+| NuGet Package                                                                                    | Version                 |
+| ------------------------------------------------------------------------------------------------ | ----------------------- |
+| [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI)                | 9.7.1                   |
+| [Microsoft.Extensions.AI.OpenAI](https://www.nuget.org/packages/Microsoft.Extensions.AI.OpenAI/) | 9.7.1-preview.1.25365.4 |
+| [Azure.AI.OpenAI](https://www.nuget.org/packages/Azure.AI.OpenAI)                                | 2.2.0-beta.5            |
 
 We do not guarantee compatibility or correct operation with higher versions. Refer to the following announcement for additional information: [DevExpress.AIIntegration moves to a stable version](https://supportcenter.devexpress.com/ticket/details/t1292705/devexpress-aiintegration-references-stable-versions-of-microsoft-ai-packages).
 
@@ -57,13 +59,13 @@ The solution implements a client-server pattern:
 - The MCP Server runs as a background service at http://localhost:5002/mcp.
 - The client opens a web UI with DevExpress AI Chat at http://localhost:5001.
 
-The **AIChatMcpServer** project must run for the **AIChatMcpClient** to function. If you start the solution from Visual Studio, select _AI Chat with MCP_ from the **Startup Item** dropdown. If you run a solution from a command line, ensure the **AIChatMcpServer** project is running before starting the **AIChatMcpClient** project.
+The **AIChatMcpServer** project must be operational for the **AIChatMcpClient** to function. If you start the solution from Visual Studio, select **AI Chat with MCP** from the **Startup Item** dropdown. If you run a solution from a command line, ensure the **AIChatMcpServer** project is running before starting the **AIChatMcpClient** project.
 
 ## Implementation Details
 
 ### MCP Server
 
-The MCP server acts as a bridge between the AI Chat and your data/services. It exposes tools, resources, and prompts, which allow the client to interact with data and services through a standardized interface.
+The MCP server serves as a bridge between the AI Chat and your data/services. It exposes tools, resources, and prompts, which allow the client application to interact with data and services via a standardized interface.
 
 This example features a custom MCP server to demonstrate core integration patterns. Because the implementation follows the Model Context Protocol [standards](https://modelcontextprotocol.io/docs/learn/architecture), you can reuse the same code to connect the AI Chat to any MCP-compliant service.
 
@@ -77,7 +79,7 @@ The server exposes three [tools](CS/AIChatMcpServer/Entities/Tools.cs) that AI C
 
 #### Resources
 
-The server provides access to the following [static resources](CS/AIChatMcpServer/Entities/Resources.cs) that a user can reference during a chat session:
+Through the server, the chat can read the following [static files](CS/AIChatMcpServer/Entities/Resources.cs):
 
 - [Access log](CS/AIChatMcpServer/Data/access.txt): Nginx-style HTTP server logs with errors and requests.
 - [AI Chat API Reference](CS/AIChatMcpServer/Data/dxaichat.md): DevExpress Blazor AI Chat component documentation.
