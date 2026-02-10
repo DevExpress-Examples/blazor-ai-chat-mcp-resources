@@ -1,6 +1,5 @@
 # User-specific files
 *.suo
-*.user
 *.userosscache
 *.sln.docstates
 
@@ -27,9 +26,6 @@ bld/
 *.sln.iml
 
 # User secrets and settings
-**/appsettings.json
-**/appsettings.*.json
-!**/appsettings.Development.json
 
 # .NET Core
 project.lock.json
