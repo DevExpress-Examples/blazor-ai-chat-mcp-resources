@@ -124,7 +124,7 @@ The [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AI
 
 When you interact with the chat:
 
-- Messages go to Azure OpenAI.
+- Messages are sent to Azure OpenAI.
 - The model automatically identifies and invokes relevant MCP tools.
 - The AI Chat component displays the result.
 
