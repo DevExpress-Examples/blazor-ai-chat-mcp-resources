@@ -12,7 +12,7 @@ This solution demonstrates how the [DevExpress Blazor AI Chat](https://docs.deve
 - **Documentation & knowledge base**: Allow your AI assistant to access technical manuals, API references, or internal wiki.
 - **Workflow Automation**: Integrate AI Chat with productivity tools like Slack, GitHub, or Jira.
 - **Web research**: Retrieve real-time data from the web using Puppeteer or search APIs.
-- **Business tools**: Connect AI chat to internal CRMs, ERPs, or custom business logic.
+- **Business tools**: Connect AI chat to internal CRMs, ERPs, or other business applications.
 
 You can quickly add new capabilities to the AI through the MCP server without a need to modify the client code.
 
