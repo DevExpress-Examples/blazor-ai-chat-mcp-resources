@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# DevExpress Blazor AI Chat Integration with Model Context Protocol
+# DevExpress Blazor AI Chat - Integration with Model Context Protocol
 
 This solution demonstrates how the [DevExpress Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) component integrates with the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro). AI models use MCP to securely interact with external data sources, tools, and files. This approach improves context awareness and response accuracy of the model. For example:
 
