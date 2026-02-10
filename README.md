@@ -9,7 +9,7 @@ This solution demonstrates how the [DevExpress Blazor AI Chat](https://docs.deve
 
 - **Data analysis**: Connect to enterprise databases and other in-house data sources.
 - **Local file management**: Grant the AI model restricted access to a local directory or codebase.
-- **Documentation & knowledge bases**: Allow your AI assistant to access to technical manuals, API references, or internal wikis.
+- **Documentation & knowledge base**: Allow your AI assistant to access technical manuals, API references, or internal wiki.
 - **Workflow Automation**: Integrate AI Chat with productivity tools like Slack, GitHub, or Jira.
 - **Web research**: Retrieve real-time data from the web with Puppeteer or search APIs.
 - **Business tools**: Connect AI chat to internal CRMs, ERPs, or custom business logic.
