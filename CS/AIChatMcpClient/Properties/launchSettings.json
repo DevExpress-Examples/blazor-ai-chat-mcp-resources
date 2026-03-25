@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AIChatMcpClient": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:1598;http://localhost:1599"
+    }
+  }
+}
